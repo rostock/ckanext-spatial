@@ -31,7 +31,7 @@ L.drawLocal = {
 			buttons: {
 				polyline: 'Draw a polyline',
 				polygon: 'Draw a polygon',
-				rectangle: 'Draw a rectangle',
+				rectangle: 'Rechteck aufziehen',
 				circle: 'Draw a circle',
 				marker: 'Draw a marker'
 			}

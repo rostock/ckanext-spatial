@@ -27,8 +27,9 @@ this.ckan.module('dataset-map', function (jQuery, _) {
 
       // fix bbox when w-long is positive while e-long is negative.
       // assuming coordinate sequence is west to east (left to right)
-      if (this.extent.type == 'Polygon'
+      if (this.extent.type.toLowerCase() == 'polygon'
         && this.extent.coordinates[0].length == 5) {
+        this.extent.type = 'Polygon'
         _coordinates = this.extent.coordinates[0]
         w = _coordinates[0][0];
         e = _coordinates[2][0];

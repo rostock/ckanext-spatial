@@ -185,7 +185,7 @@ class SpatialQuery(p.SingletonPlugin):
 
             if self.search_backend == 'solr':
                 # Only bbox supported for this backend
-                if not (geometry['type'] == 'Polygon'
+                if not (geometry['type'].lower() == 'polygon'
                    and len(geometry['coordinates']) == 1
                    and len(geometry['coordinates'][0]) == 5):
                     log.error('Solr backend only supports bboxes (Polygons with 5 points), ignoring geometry {0}'.format(pkg_dict['extras_spatial']))
@@ -203,7 +203,7 @@ class SpatialQuery(p.SingletonPlugin):
                 wkt = None
 
                 # Check potential problems with bboxes
-                if geometry['type'] == 'Polygon' \
+                if geometry['type'].lower() == 'polygon' \
                    and len(geometry['coordinates']) == 1 \
                    and len(geometry['coordinates'][0]) == 5:
 
